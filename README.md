@@ -55,21 +55,6 @@ Flash the latest firmware from your browser at **[https://whisperos.dev](https:/
 
 See what's new in the **[changelog](https://whisperos.dev/changelogs)**.
 
-## 📱 Supported Devices
-
-| Device | Notes |
-| --- | --- |
-| Heltec V3, V4 | |
-| Heltec T114, T096, Tracker V2 | |
-| RAK4631 | Needs a screen for repeater mode |
-| Faketec / ProMicro (SX1262, SX1268) | |
-| GAT562 Trial Tracker, 30S Mesh Kit, Mesh Tracker Pro | |
-| Wio Tracker L1 | |
-| MeshTiny | |
-| FoBE Quill, FoBE Idea Mesh Tracker C1 | |
-| TinyLoRa C3 | |
-| M5Stack Cardputer ADV | Built-in keyboard |
-
 ## 🔔 Get Updates
 
 - **Discord**: [https://discord.gg/73jThCU9cw](https://discord.gg/73jThCU9cw)
