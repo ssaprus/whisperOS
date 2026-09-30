@@ -2,59 +2,73 @@
 
 # WhisperOS
 
-**WhisperOS** is a user-friendly operating system designed for small, portable radio devices (like Heltec LoRa boards) that allow you to communicate without the internet or cellular networks. It creates a "mesh" network where devices talk directly to each other.
+**WhisperOS** is firmware for small LoRa radio boards, like the Heltec V3 and V4. It lets you send text messages without internet or cell service. Devices talk to each other directly and relay messages through other devices to reach further.
 
-Think of it like a walkie-talkie for text messages that can also hop through other people's devices to reach further.
+Think of it as a walkie-talkie for text messages.
 
-## Key Features for You
+## Features
 
-### 1. **Off-Grid Messaging**
-   - **Text Anyone**: Send and receive text messages to other users on the network.
-   - **Privacy**: Your messages stay on the local mesh network, not on the internet.
-   - **Contacts List**: See who else is nearby or on the network. It shows you when they were "last seen" (e.g., "5m ago"), so you know if they are available.
-   - **Smart Typing**: Includes a **virtual keyboard on the device itself** with **predictive text** (English and Chinese input) to make typing easier on small screens.
-   - **Multilingual Display**: Supports **CJK (Chinese, Japanese, Korean)** and many other languages for message display.
+### Messaging
+- **Off-grid text:** Send direct messages and channel messages over the mesh.
+- **Contacts:** See who is on the network and when you last heard from them (e.g. "5m ago").
+- **Quick messages:** Send preset phrases and see delivery status.
+- **Languages:** English and Simplified Chinese interface. Messages display in Chinese, Japanese, Korean, and many other languages.
 
-### 2. **Simple Dashboard**
-   - **At a Glance**: Quickly check your unread messages, battery life, and connection status (Bluetooth).
-   - **Uptime**: See how long your device has been running.
+### Input
+- **On-screen keyboard** with predictive text in English, plus full Pinyin input with phrase suggestions.
+- **CardKB:** Plug in a CardKB mini keyboard at any time. The device detects it on its own.
+- **Morse code input** as another way to type.
 
-### 3. **Customize Your Experience**
-   - **Notifications**: Choose how you want to be alerted—Beep (Buzzer), Flash (LED), or Vibrate. You can turn them all off for a "Do Not Disturb" mode.
-   - **Display Settings**: Adjust brightness or set "Always On" watch faces (like a binary clock or cute animal faces) if you want your device to double as a desk clock.
-   - **Night Mode**: Easily dim the screen or turn it off to save battery.
+### Display
+- **Always-on clock** with Default, Binary, Cat, and Dog faces, so your device can double as a desk clock.
+- **Brightness and Zen mode:** Dim the screen or keep it off to save battery.
+- **Notifications:** Buzzer, LED, or vibration. Turn each one off when you need quiet.
 
-### 4. **Power Management**
-   - **Battery Info**: Detailed battery voltage monitoring to help you manage power during long trips.
-   - **Auto-Sleep**: The device is smart about saving power when you aren't using it.
-   - **Long Lasting**: For Heltec V3 & V4, it could last **5 days**.
+### Power
+- **Long battery life:** Up to 7 days of standby with light messaging on Heltec V3 and V4.
+- **Battery info:** Voltage readout and ADC calibration on the device.
+- **USB power:** The screen stays on while USB power is connected, and turns off on battery.
 
-### 5. **Technical Tools**
-   - **Radio Status**: A specialized screen shows you the signal strength (RSSI) of the last message, with a visual graph (sparkline) to help you find the best spot for reception.
-   - **Connection Options**: Manage Bluetooth (to connect to your phone) and WiFi settings directly.
+### GPS
+- **Duty cycle modes:** Pick how often GPS gets a fix, from Fast to Ultra Eco, to trade accuracy for battery life.
+- **Location privacy:** Share exact coordinates, a rounded area, or none.
 
-## Who is this for?
-- **Hikers & Campers**: Communicate in areas with no cell service.
-- **Emergency Preppers**: Reliable backup communication when towers are down.
-- **Tech Enthusiasts**: Fun way to chat and experiment with radio tech.
-- **Groups/Events**: Coordinate with friends at festivals or large events where networks are congested.
+### Radio and Repeater
+- **Radio setup on the device:** Change frequency, bandwidth, spreading factor, coding rate, and transmit power.
+- **Radio status:** Signal strength of the last message with a history graph, plus live noise floor.
+- **Repeater mode** with live stats. Set Routing to Standard or Max to skip 1-byte packets.
 
-In essence, **WhisperOS** turns a simple radio board into a fully functional, standalone communicator that fits in your pocket.
+### Connection and Updates
+- **Bluetooth or USB** to the MeshCore companion app. The device detects USB on its own.
+- **Back up and restore** settings, contacts, and channels over the companion connection.
+- **BLE OTA updates** on nRF52 devices.
+
+## Who is it for?
+- **Hikers and campers** in areas with no cell service.
+- **Emergency preppers** who need a backup when towers are down.
+- **Groups at festivals or large events** where mobile networks are congested.
+- **Radio tinkerers** who want to experiment with mesh networking.
 
 ## 📥 Download
 
-Get the latest firmware at **[https://ssaprus.works](https://ssaprus.works)**.
+Flash the latest firmware from your browser at **[https://whisperos.dev](https://whisperos.dev)**.
+
+See what's new in the **[changelog](https://whisperos.dev/changelogs)**.
 
 ## 📱 Supported Devices
 
-| Device               | Notes        |
-| -------------------- | ------------ |
-| Heltec V3, V4, T114  | Full support |
-| GAT562 Mesh Watch    | Full support |
-| GAT562 Trial Tracker | Full support |
-| Wio Tracker L1       | Full support |
-| MeshTiny             | Full support |
-
+| Device | Notes |
+| --- | --- |
+| Heltec V3, V4 | |
+| Heltec T114, T096, Tracker V2 | |
+| RAK4631 | Needs a screen for repeater mode |
+| Faketec / ProMicro (SX1262, SX1268) | |
+| GAT562 Trial Tracker, 30S Mesh Kit, Mesh Tracker Pro | |
+| Wio Tracker L1 | |
+| MeshTiny | |
+| FoBE Quill, FoBE Idea Mesh Tracker C1 | |
+| TinyLoRa C3 | |
+| M5Stack Cardputer ADV | Built-in keyboard |
 
 ## 🔔 Get Updates
 
@@ -62,16 +76,17 @@ Get the latest firmware at **[https://ssaprus.works](https://ssaprus.works)**.
 - **Telegram**: [https://t.me/whisper_dev](https://t.me/whisper_dev)
 - **YouTube**: [https://www.youtube.com/@tsaokoming](https://www.youtube.com/@tsaokoming)
 
+## 🐞 Report a Problem
+
+Open an issue with the **[bug report or feature request form](https://github.com/ssaprus/whisperOS/issues/new/choose)**.
 
 ## The Fine Print 📝
 
-* **Testing firmware only:** These builds are experimental—please test thoroughly before real-world use.
-* **Backup your data:** Always back up configuration and messages before installing new firmware.
-* **No warranty:** Provided as-is with no guarantees. Test in your intended environment.
-* **Use responsibly:** Ensure compliance with local radio regulations. You are responsible for lawful use.
-
+* **Testing firmware:** These builds are experimental. Test them before you rely on them.
+* **Back up your data:** Back up your settings and messages before you install new firmware.
+* **No warranty:** Provided as-is with no guarantees.
+* **Use responsibly:** Follow your local radio regulations. You are responsible for lawful use.
 
 ## 🌐 Powered by MeshCore
 
 [Learn more about MeshCore](https://github.com/meshcore-dev/MeshCore)
-
