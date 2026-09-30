@@ -25,7 +25,7 @@ body:
       options:
         - BLE
         - USB
-        - None
+        - Not connected
     validations:
       required: true
   - type: textarea
