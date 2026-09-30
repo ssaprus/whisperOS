@@ -1,5 +1,3 @@
-![ssaprus_small_logo](assets/ssaprus_logo.jpg)
-
 # WhisperOS
 
 **WhisperOS** is firmware for small LoRa radio boards, like the Heltec V3 and V4. It lets you send text messages without internet or cell service. Devices talk to each other directly and relay messages through other devices to reach further.
