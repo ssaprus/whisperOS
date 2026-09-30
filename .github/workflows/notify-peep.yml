@@ -1,0 +1,47 @@
+name: Notify Peep
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened]
+  issue_comment:
+    types: [created]
+
+permissions: {}
+
+jobs:
+  notify:
+    # issue_comment also fires for pull request comments.
+    if: github.event_name == 'issues' || github.event.issue.pull_request == null
+    runs-on: ubuntu-latest
+    environment: issue
+    timeout-minutes: 2
+    steps:
+      - name: Send issue event to Peep
+        env:
+          PEEP_QUEUE_TOKEN: ${{ secrets.PEEP_QUEUE_TOKEN }}
+        run: |
+          # Build JSON from the event file so issue text never reaches the shell.
+          payload="$(jq -c '
+            .issue as $i
+            | (if .comment then "commented" else .action end) as $act
+            | (if .comment then .comment.user.login else .sender.login end) as $who
+            | (if .comment then .comment.html_url else $i.html_url end) as $url
+            | ((if .comment then .comment.body else $i.body end) // "") as $text
+            | {
+                title: "whisperOS issue #\($i.number) \($act): \($i.title)",
+                body: "\($who) \($act) \($url)\n\n\($text[0:2000])",
+                metadata: {
+                  source: "github-actions",
+                  repo: .repository.full_name,
+                  event: env.GITHUB_EVENT_NAME,
+                  action: .action,
+                  issue_url: $i.html_url
+                }
+              }
+          ' "$GITHUB_EVENT_PATH")"
+
+          curl -fsS --max-time 20 \
+            -H "Authorization: Bearer ${PEEP_QUEUE_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "${payload}" \
+            "https://peep.tsao.dev/queues/default"
