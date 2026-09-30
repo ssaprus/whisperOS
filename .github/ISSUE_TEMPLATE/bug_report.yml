@@ -2,26 +2,18 @@ name: Bug report
 description: Report a problem with WhisperOS
 labels: ["bug"]
 body:
-  - type: dropdown
+  - type: input
     id: device
     attributes:
       label: Device / board
-      options:
-        - Heltec V3
-        - Heltec V4
-        - Heltec T114
-        - RAK4631
-        - Faketec/ProMicro
-        - Wio Tracker L1
-        - M5Stack Cardputer
-        - Other
+      placeholder: Heltec V4, Faketec v5, RAK4631
     validations:
       required: true
   - type: input
     id: firmware-version
     attributes:
       label: Firmware version
-      description: Shown in the app, e.g. 1.4.4
+      description: Shown on the boot screen and in the System screen.
       placeholder: "1.4.4"
     validations:
       required: true
