@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest an idea or improvement for WhisperOS
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What are you trying to do, and what does not work well today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: How should it work?
+    validations:
+      required: true
+  - type: input
+    id: devices
+    attributes:
+      label: Device(s)
+      description: Optional. Which boards does this apply to?
+      placeholder: Heltec V3, T114
+    validations:
+      required: false

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Telegram
+    url: https://t.me/whisper_dev
+    about: Ask questions and chat with other users.
+  - name: Discord
+    url: https://discord.com/invite/73jThCU9cw
+    about: Ask questions and get help from the community.
